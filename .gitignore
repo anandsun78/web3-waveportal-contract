@@ -11,3 +11,4 @@ bower_components
 #Hardhat files
 cache
 artifacts
+.env
