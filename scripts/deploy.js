@@ -1,7 +1,11 @@
+// Script to deploy contract to either rinkeby or ethereum main net
+const contractValue = process.env.CONTRACT_VALUE;
+
 const main = async () => {
+  // Deploy Wave portal contract!
   const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
   const waveContract = await waveContractFactory.deploy({
-    value: hre.ethers.utils.parseEther("0.001"),
+    value: hre.ethers.utils.parseEther(contractValue),
   });
 
   await waveContract.deployed();
